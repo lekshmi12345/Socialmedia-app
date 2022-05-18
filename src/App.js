@@ -5,11 +5,21 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Addpost from './component/Addpost';
 import Searchpost from './component/Searchpost';
 import Viewallpost from './component/Viewallpost';
+import Navbar from './component/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
-    <Viewallpost/>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' exact element={<Addpost/>}/>
+      <Route path='/search' exact element={<Searchpost/>}/>
+      <Route path='/viewall' exact element={<Viewallpost/>}/>
+    </Routes>
+    
+    </BrowserRouter>
+    
     
     </>
   );
